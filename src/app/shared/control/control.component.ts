@@ -1,7 +1,9 @@
 import {
   Component,
+  ElementRef,
   HostBinding,
   HostListener,
+  inject,
   input,
   Input,
   ViewEncapsulation,
@@ -25,8 +27,10 @@ export class ControlComponent {
   //   console.log('Clicked HostListener');
   // }
   label = input.required<string>();
+  private el = inject(ElementRef);
 
   onClick() {
     console.log('Clicked HostListener');
+    console.log(this.el);
   }
 }
